@@ -7,7 +7,7 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log("http://localhost:${port}");
+  // console.log(`http://localhost:${port}`);
 });
 
 class ProductManager {
@@ -27,27 +27,62 @@ class ProductManager {
     const { title, description, price, thumbnail, code, stock } = productAdd;
 
     const newProduct = {
-      title,
-      description,
-      price,
-      thumbnail,
-      code,
-      stock,
+      title: title,
+      description: description,
+      price: price,
+      thumbnail: thumbnail,
+      code: code,
+      stock: stock,
+      idCounter: this.idCounter++,
     };
 
     this.products = [...this.products, newProduct];
   }
 
   getProducts() {
-    // const prods = this.product
-    this.products.forEach((prod) => {
-      console.log("prods:", prod);
-      return prod;
-    });
+    if (this.products.length === 0) {
+      return "No hay productos";
+    } else {
+      console.log("Estos son los productos");
+      // console.log(this.products); // Mientras desarrollan, pongan console.logs, cuando estan seguros que funciona los sacan/comentan.
+      return this.products;
+    }
   }
 
   getProductById(idProd) {
-    // const prods = this.product
-    this.products.forEach((prod) => {});
+    const prodToFind = this.products.find((product) => product.idCounter === idProd);
+
+    if (prodToFind === undefined) {
+      console.log(`No existe un producto con el ID ${idProd}`);
+      return `No existe un producto con el ID ${idProd}`;
+    }
+
+    console.log(`Este es el producto con id ${idProd}`);
+    console.log(JSON.stringify(prodToFind, null, 2));
+    return `Este es el producto con id ${prodToFind.idCounter}  ${prodToFind}`
   }
 }
+
+const NewCustomer = new ProductManager();
+
+NewCustomer.getProducts(); // No se ve la respuesta, porque los returns no se muestran por consola.
+console.log(NewCustomer.getProducts()); // Para ver el valor del return de una funciona, para ver lo que devuelve una funcion, hay que hacerle un console.log
+
+// Porque en código a escala, no deben haber console logs en las funciones.
+
+const productToAdd = {
+  title: "title prod",
+  description: "description prod",
+  price: 100,
+  thumbnail: "thumbnail prod",
+  code: "abc123",
+  stock: 50,
+};
+
+NewCustomer.addProduct(productToAdd);
+NewCustomer.addProduct(productToAdd);
+NewCustomer.addProduct(productToAdd);
+
+console.log(NewCustomer.getProducts()); //
+
+NewCustomer.getProductById(1);
