@@ -10,79 +10,55 @@ app.listen(port, () => {
   // console.log(`http://localhost:${port}`);
 });
 
-class ProductManager {
-  constructor(title, description, price, thumbnail, code, stock) {
-    this.products = [];
-    this.idCounter = 0;
+class TicketManager {
+  constructor() {
 
-    this.title = title;
-    this.description = description;
-    this.price = price;
-    this.thumbnail = thumbnail;
-    this.code = code;
-    this.stock = stock;
+    this.eventos = [];
+    this._precioBaseDeGanancia = 0;
+
   }
 
-  addProduct(productAdd) {
-    const { title, description, price, thumbnail, code, stock } = productAdd;
 
-    const newProduct = {
-      title: title,
-      description: description,
-      price: price,
-      thumbnail: thumbnail,
-      code: code,
-      stock: stock,
-      idCounter: this.idCounter++,
-    };
-
-    this.products = [...this.products, newProduct];
+  getEventos() {
+    return this.eventos
   }
 
-  getProducts() {
-    if (this.products.length === 0) {
-      return "No hay productos";
-    } else {
-      console.log("Estos son los productos");
-      // console.log(this.products); // Mientras desarrollan, pongan console.logs, cuando estan seguros que funciona los sacan/comentan.
-      return this.products;
-    }
-  }
+  addEvento(nombre, lugar, precio, capacidad, fecha) {
 
-  getProductById(idProd) {
-    const prodToFind = this.products.find((product) => product.idCounter === idProd);
+    const id = this.eventos.length++
+    const participantes = []
 
-    if (prodToFind === undefined) {
-      console.log(`No existe un producto con el ID ${idProd}`);
-      return `No existe un producto con el ID ${idProd}`;
+    const eventToAdd = {
+      nombre,
+      lugar,
+      precio,
+      capacidad,
+      fecha,
+      id
     }
 
-    console.log(`Este es el producto con id ${idProd}`);
-    console.log(JSON.stringify(prodToFind, null, 2));
-    return `Este es el producto con id ${prodToFind.idCounter}  ${prodToFind}`
+    console.log("Se agrega el siguiente evento: ", eventToAdd);
+    console.log(this.eventos);
+    return this.eventos = [...this.eventos, eventToAdd]
+
   }
+
+  agregarUsuario(id_evento, id_usuario) {
+
+    const encontrarIdEvento = this.eventos.find((event) => {
+      if (event.id === id_evento) {
+        console.log("El evento existe");
+        return "El evento existe"
+      }
+    })
+
+
+  }
+
+
+
+
+
+
 }
 
-const NewCustomer = new ProductManager();
-
-NewCustomer.getProducts(); // No se ve la respuesta, porque los returns no se muestran por consola.
-console.log(NewCustomer.getProducts()); // Para ver el valor del return de una funciona, para ver lo que devuelve una funcion, hay que hacerle un console.log
-
-// Porque en código a escala, no deben haber console logs en las funciones.
-
-const productToAdd = {
-  title: "title prod",
-  description: "description prod",
-  price: 100,
-  thumbnail: "thumbnail prod",
-  code: "abc123",
-  stock: 50,
-};
-
-NewCustomer.addProduct(productToAdd);
-NewCustomer.addProduct(productToAdd);
-NewCustomer.addProduct(productToAdd);
-
-console.log(NewCustomer.getProducts()); //
-
-NewCustomer.getProductById(1);
