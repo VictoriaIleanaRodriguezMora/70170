@@ -1,35 +1,32 @@
-# HANDS ON LAB | Registrador de tickets de eventos
+# Proyecto de node
+
+Actividad de repaso para fortalecer conceptos de node y javascript
+
+- Crear un proyecto de node que genere 10000 números aleatorios en un rango de 1 a 20. 
+- Indicar por consola la finalización de esta operación con un mensaje.
+- Mediante el uso de Promesas, crear un objeto cuyas claves sean los números salidos y el valor asociado a cada clave será la cantidad de veces que salió dicho número. Representar por consola los resultados.
+
+**Nota**: Considerar que esta operación debe realizarse de forma asíncrona.
 
 
-¿Cómo lo hacemos? Se creará una clase que permitirá llevar una gestión completa de usuarios que deseen acceder a dichos eventos.
+### [Enlace a la presentación](https://docs.google.com/presentation/d/1Ue3LTQUxuwKs4c80b71RL4cX5rzNpHwk5GxLkLc62zw/edit#slide=id.g1267f3579e2_0_77)
 
 
-### [Enlace a la presentación](https://docs.google.com/presentation/d/1jPxU38oObKKsut8ttUDKzWwCiDEW2CQLRQGNICS_4MQ/edit#slide=id.g11af22068b0_8_705)
+# HANDS ON LAB | Práctica de módulo nativo: crypto
 
-
-- Definir clase TicketManager, el cual tendrá un arreglo de eventos que iniciará vacío
-- La clase debe contar con una variable privada “precioBaseDeGanancia”, la cual añadirá un costo adicional al precio de cada evento.
-- Debe contar con el método “getEventos” El cual mostrará los eventos guardados.
-- Debe contar con el método “agregarEvento” El cual recibirá los siguientes parámetros:
+¿Cómo lo hacemos? 
+- Se creará una clase `UsersManager` que permitirá guardar usuarios en un atributo estático. 
+- El usuario se recibirá con una contraseña en string plano, y se deberá guardar la contraseña hasheada con crypto. 
+- Utilizar el módulo nativo crypto.
+- El manager debe contar con los siguientes métodos:
+  - El método `"Crear usuario"`  debe recibir un objeto con los campos:
   - `nombre`
-  - `lugar`
-  - `precio` (deberá agregarse un 0.15 del valor original)
-  - `capacidad` (50 por defecto)
-  - `fecha` (hoy por defecto)
-  
-  - El método deberá crear además **el campo id** autoincrementable y el campo **"participantes"** que siempre iniciará con un arreglo vacío.
+  - `apellido`
+  - `nombreDeUsuario`
+  - `contraseña`
+- El método debe guardar un usuario en un atributo estático llamado `"Usuarios"`, **recordando que la contraseña debe estar hasheada por seguridad**
 
-- Debe contar con un método “agregarUsuario” El cual recibirá:
-  - `id` del evento (debe existir, agregar validaciones)
-  - `id` del usuario
-  
-  - El método debe evaluar que el **evento exista** y que el **usuario no haya estado registrado previamente** (validación de fecha y capacidad se evitará para no alargar el reto)
-Si todo está en orden, debe agregar el id del usuario en el arreglo “participantes” de ese evento.
-
-- Debe contar con un método “ponerEventoEnGira” El cual - recibirá:
-  - id del evento
-  - nueva localidad
-  - nueva fecha
-  
-El método debe copiar el evento existente, con una nueva localidad, nueva fecha, nuevo id y sus participantes vacíos (Usar spread operator para el resto de las propiedades)
+- El método `"mostrarUsuarios"`  imprimirá en consola todos los usuarios almacenados.
+- El método `validarUsuario"`  recibirá el nombre de usuario que quiero validar, seguido de la contraseña,  debe poder leer el json previamente generado con el arreglo de usuarios y hacer la comparación de contraseñas, Si coinciden el usuario y la contraseña, devolver un mensaje `"logueado"` , caso contrario indicar error si el usuario no existe, o si la contraseña no coincide.
+****
 
