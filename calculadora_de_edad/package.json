@@ -1,0 +1,16 @@
+{
+  "name": "calculadora_de_edad",
+  "version": "1.0.0",
+  "description": "Realizando un programa que dependa de módulos externos",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.30.1"
+  }
+}

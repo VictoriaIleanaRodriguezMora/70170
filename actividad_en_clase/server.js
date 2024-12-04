@@ -1,7 +1,7 @@
 let arr = [];
 let obj = {};
 
-/* async function code() {
+async function code() {
   try {
     for (let i = 0; i < 100; i++) {
       const numRandom = Math.floor(Math.random() * 20);
@@ -19,33 +19,33 @@ let obj = {};
   }
 }
 
-code() */
+code()
 
 // console.log("La operación terminó");
 
-function generateRandomNumbers(obj) {
-  return new Promise((resolve, reject) => {
-    try {
-      for (let i = 0; i < 100; i++) {
-        const numRandom = Math.floor(Math.random() * 20);
-        console.log(numRandom);
-        if (obj[numRandom]) {
-          obj[numRandom]++;
-        } else {
-          obj[numRandom] = 1;
-        }
-      }
-      resolve(obj);
-    } catch (err) {
-      reject(err);
-    }
-  });
-}
+// function generateRandomNumbers(obj) {
+//   return new Promise((resolve, reject) => {
+//     try {
+//       for (let i = 0; i < 100; i++) {
+//         const numRandom = Math.floor(Math.random() * 20);
+//         console.log(numRandom);
+//         if (obj[numRandom]) {
+//           obj[numRandom]++;
+//         } else {
+//           obj[numRandom] = 1;
+//         }
+//       }
+//       resolve(obj);
+//     } catch (err) {
+//       reject(err);
+//     }
+//   });
+// }
 
-generateRandomNumbers(obj)
-  .then(result => {
-    console.log('Resultado:', result);
-  })
-  .catch(err => {
-    console.error('Error:', err);
-  });
+// generateRandomNumbers(obj)
+//   .then(result => {
+//     console.log('Resultado:', result);
+//   })
+//   .catch(err => {
+//     console.error('Error:', err);
+//   });
