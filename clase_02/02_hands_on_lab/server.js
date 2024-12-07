@@ -85,4 +85,3 @@ Ticket.addEvento("nombre", "lugar", 100, 20);
 (Ticket.agregarUsuario(1, 0));
 (Ticket.agregarUsuario(1, 12));
 (Ticket.agregarUsuario(1, 2));
-
