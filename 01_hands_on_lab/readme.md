@@ -20,6 +20,6 @@
   - Debe devolver una promesa que se resuelva siempre que ninguno de los dos factores sea negativo
   - Si el producto es negativo, rechazar la oferta indicando "La calculadora sólo puede devolver valores positivos".
 
-- Definir la misma función `división` utilizada en esta clase.
+- Definir la misma función `división` utilizada en esta clase (se refiere a la de la ppt).
 
 - Definir una función asíncrona `"cálculos"`, y realizar pruebas utilizando async/await y try/catch
