@@ -1,12 +1,6 @@
 # Ejercicios realizados:
 
-### Clase 2 - Nuevas funcionalidades de los lenguajes ECMAScript
+### Clase 5 - Manejo de archivos en Javascript
 
-- Utilización ES6-ES9 [Enlace a la presentación](https://docs.google.com/presentation/d/1vJscesMmwys7SrNkPPjuvD7dHLNK1awl-wuXBdlH6KA/edit#slide=id.p7)
-
-- HANDS ON LAB | Registrador de tickets de eventos [Enlace a la presentación](https://docs.google.com/presentation/d/1jPxU38oObKKsut8ttUDKzWwCiDEW2CQLRQGNICS_4MQ/edit#slide=id.g11af22068b0_8_705)
-  
-### Clase 3 - Programación sincrónica y asincrónica
-- HANDS ON LAB | Calculadora positiva con promesas [Enlace a la presentación](https://docs.google.com/presentation/d/1Fe7xU7Pveo9y6BIKN9ogJSoTDosp2RqjnDTcFaKh-uU/edit#slide=id.g11af22068b0_8_705)
-  
-
+- [ ] Almacenar fecha y hora - [Enlace a la presentación](https://docs.google.com/presentation/d/1Ue3LTQUxuwKs4c80b71RL4cX5rzNpHwk5GxLkLc62zw/edit#slide=id.g1267f3579e2_0_77).
+- [ ] Lectura y escritura de archivos - [Enlace a la presentación](https://docs.google.com/presentation/d/1Ue3LTQUxuwKs4c80b71RL4cX5rzNpHwk5GxLkLc62zw/edit#slide=id.g1267f3579e2_0_77).
