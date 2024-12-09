@@ -1,4 +1,4 @@
-### [Enlace a la presentación](https://docs.google.com/presentation/d/1Ue3LTQUxuwKs4c80b71RL4cX5rzNpHwk5GxLkLc62zw/edit#slide=id.g1267f3579e2_0_77)
+### [Enlace a la presentación](https://docs.google.com/presentation/d/1OhbmOkHE-tBm2iG3kbKypPpHtQyZ_p77Bf07sbZoc2c/edit#slide=id.g12671ed7bcf_0_294)
 
 # Lectura y escritura de archivos
 
@@ -15,8 +15,11 @@ const info = {
 }
 ```
 - Muestre por consola el objeto info luego de leer el archivo
+
 - Guardar el objeto info en un archivo llamado info.json dentro de la misma carpeta de package.json
+
 - Incluir el manejo de errores (con throw new Error)
-- Utilizar el módulo promises de fs dentro de una función async/await y utilizar JSON.stringify + JSON.parse para poder hacer las transformaciones json->objeto y viceversa
+
+- Utilizar el módulo promises de fs dentro de una función async/await y utilizar JSON.stringify + JSON.parse para poder hacer las transformaciones json ➡️ objeto y viceversa
 
 
